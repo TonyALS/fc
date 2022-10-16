@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service 
+metadata:
+  name: goserver-service
+spec:
+  selector: ## Usado para filtrar quais pods farao parte da associacao a este service
+    app: goserver
+  type: ClusterIP ## Tipo do service
+  ports:
+    - name: goserver-service
+      port: 8080 ## Porta do service
+      targetPort: 8080 ## Porta do container, por ex, o server do go ta rodando na 8080
+      protocol: TCP
+    

@@ -1,0 +1,14 @@
+-- Cria um cluster na máquina usando kind:
+kind create cluster --name cluster_name_here
+
+-- Seta o contexto do kubectl para o cluster que acabamos de criar:
+kubectl cluster-info --context cluster_name_here
+
+-- Aplicar o manifesto (pod.yaml, deployment.yaml etc):
+kubectl apply -f pod.yaml
+
+-- Fazer port forward da porta do computador para a do pod (forma menos comum):
+kubectl port-forward pod/nginx 9000:80
+
+-- Pegar infos de um POD
+kubectl describe pod pod_name
