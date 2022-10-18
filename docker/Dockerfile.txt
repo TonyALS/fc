@@ -1,0 +1,8 @@
+FROM ubuntu:latest
+# ENTRYPOINT eh um comando fixo que nao pode ser substituido via 
+# parametros durante o run da imagem
+ENTRYPOINT [ "echo", "Hello " ]
+# CMD eh um comando variavel que entra como parametro para o ENTRYPOINT
+CMD [ "World" ]
+
+# docker run -it tonyals/dummyubuntu Parametro do CMD pro EntryPoint

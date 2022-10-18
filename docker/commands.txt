@@ -1,0 +1,14 @@
+Listar images:
+docker images
+
+Remover images:
+docker rmi image_name
+
+Remover varias imagens de uma vez
+docker rm $(docker ps -a -q) -f
+
+Buildar imagem: -t é flag para tag e o . é onde está o Dockerfile base
+docker build -t tonyals/nginxvim:latest .
+
+Rodar a imagem:
+docker run -it image_name bash
