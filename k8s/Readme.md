@@ -9,6 +9,7 @@ Um POD é basicamente uma abstração sobre um container, é a menor unidade do 
 O Kubernetes executa sua carga de trabalho colocando contêineres em Pods para serem executados em Nós. Um nó pode ser uma máquina virtual ou física, dependendo do cluster. Cada nó é gerenciado pela camada de gerenciamento e contém os serviços necessários para executar Pods.
 * Normalmente, você tem vários nós em um cluster.
 * Os componentes em um nó incluem o kubelet, um agente de execução de contêiner, e o kube-proxy.
+[Mais detalhes](Nodes.md)
 
 ## Service
 O Service fica anexado ao POD. O ciclo de vida do POD e da Service não estão diretamente conectados, portanto vários PODs podem ser criados e destruídos e o IP de acesso ao Service (que concentra esses PODs) e o próprio Service, continua válido.
@@ -37,3 +38,5 @@ Local utilizado para salvar informações que não podem ser efêmeras, como dad
 ## Cluster
 É um conjunto de máquinas. Cada cluster possui um node (máquina) chamado master
 que controla os demais.
+
+<img src="./img/example-cluster-setup.png" alt="Example Cluster Setup">
