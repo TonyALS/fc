@@ -20,6 +20,8 @@ spec:
           envFrom:
             - configMapRef:
                 name: goserver-env
+            - secretRef:
+                name: goserver-secret
           # env:
           #   - name: NAME
           #     valueFrom:
