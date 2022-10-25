@@ -5,7 +5,7 @@ metadata:
 spec:
   selector: ## Usado para filtrar quais pods farao parte da associacao a este service
     app: goserver
-  type: ClusterIP ## Tipo do service
+  type: NodePort ## Tipo do service
   ports:
     - name: goserver-service
       port: 8080 ## Porta do service

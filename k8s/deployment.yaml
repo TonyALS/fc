@@ -8,7 +8,7 @@ spec:
   selector:
     matchLabels:
       app: goserver
-  replicas: 10
+  replicas: 1
   template: ## Template eh basicamente as configs do POD
     metadata:
       labels:
@@ -16,4 +16,19 @@ spec:
     spec:
       containers:
         - name: goserver
-          image: "tonyals/webserver-go:v2"
+          image: "tonyals/goserver:latest"
+          envFrom:
+            - configMapRef:
+                name: goserver-env
+          # env:
+          #   - name: NAME
+          #     valueFrom:
+          #       configMapKeyRef:
+          #         name: goserver-env
+          #         key: NAME
+
+          #   - name: AGE
+          #     valueFrom:
+          #       configMapKeyRef:
+          #         name: goserver-env
+          #         key: AGE

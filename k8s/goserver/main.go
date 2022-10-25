@@ -1,10 +1,16 @@
 package main
 
-import "net/http"
+import ("net/http"
+		"os"
+		"fmt"
+	)
 
 func main() {
+	name := os.Getenv("NAME")
+	age := os.Getenv("AGE")
+
 	http.HandleFunc("/", func(rw http.ResponseWriter, r *http.Request) {
-		rw.Write([]byte("<h1>Web Server Go V2</h1>"))
+		fmt.Fprintf(rw, "Hello %s age %s", name, age)
 	})
 	http.ListenAndServe(":8080", nil)
 }

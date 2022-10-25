@@ -8,7 +8,7 @@ spec:
   selector:
     matchLabels:
       app: goserver
-  replicas: 2
+  replicas: 1
   template: ## Template eh basicamente as configs do POD
     metadata:
       labels:
