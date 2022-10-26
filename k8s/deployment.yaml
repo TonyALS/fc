@@ -8,7 +8,7 @@ spec:
   selector:
     matchLabels:
       app: goserver
-  replicas: 1
+  replicas: 0
   template: ## Template eh basicamente as configs do POD
     metadata:
       labels:
@@ -17,6 +17,16 @@ spec:
       containers:
         - name: goserver
           image: "tonyals/goserver:latest"
+          # Liveness Probe configuration:
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: 8080
+            periodSeconds: 5
+            failureThreshold: 2
+            timeoutSeconds: 1
+            successThreshold: 1
+          
           envFrom:
             - configMapRef:
                 name: goserver-env

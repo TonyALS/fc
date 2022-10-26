@@ -40,3 +40,7 @@ Local utilizado para salvar informações que não podem ser efêmeras, como dad
 que controla os demais.
 
 <img src="./img/example-cluster-setup.png" alt="Example Cluster Setup">
+
+# Probes
+
+Liveness Probe
